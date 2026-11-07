@@ -6,13 +6,13 @@ const PUB = path.join(__dirname, "public"), DBF = path.join(__dirname, "data", "
 const FEE = 150, FREE = 1500, MIN = 500;
 // p = selling price, k = your cost to make it. Edit to your real numbers.
 const MENU = [
-  { id: 1, n: "Chicken Biryani", c: "Biryani", p: 420, k: 250, e: "🍛", d: "Classic masala rice with juicy chicken and potato.", t: "Bestseller" },
-  { id: 2, n: "Sada Biryani", c: "Biryani", p: 300, k: 170, e: "🍛", d: "Plain biryani rice, lightly spiced, no meat." },
-  { id: 3, n: "Beef Pulao", c: "Pulao", p: 450, k: 280, e: "🍚", d: "Tender beef cooked into fragrant yakhni rice." },
-  { id: 4, n: "Sada Pulao", c: "Pulao", p: 280, k: 150, e: "🍚", d: "Mild, light pulao rice. Pairs well with raita." },
-  { id: 5, n: "Raita", c: "Beverages", p: 60, k: 25, e: "🥣", d: "Fresh yoghurt with cucumber and mint." },
-  { id: 6, n: "Fizz", c: "Beverages", p: 80, k: 55, e: "🥤", d: "Chilled fizzy drink, 345 ml." },
-  { id: 7, n: "Cola", c: "Beverages", p: 80, k: 55, e: "🥤", d: "Chilled cola, 345 ml." }
+  { id: 1, n: "Chicken Biryani", c: "Biryani", p: 420, k: 250, e: "🍛", img: "https://th.bing.com/th/id/OIP.RP4QPyTYAxRZ4_JKmcRz3AHaHa?w=198&h=198&c=7&r=0&o=7&dpr=1.1&pid=1.7&rm=3", d: "Classic masala rice with juicy chicken and potato.", t: "Bestseller" },
+  { id: 2, n: "Sada Biryani", c: "Biryani", p: 300, k: 170, e: "🍛", img: "assets/sada-biryani.jpg", d: "Plain biryani rice, lightly spiced, no meat." },
+  { id: 3, n: "Beef Pulao", c: "Pulao", p: 450, k: 280, e: "🍚", img: "assets/beef-pulao.jpg", d: "Tender beef cooked into fragrant yakhni rice." },
+  { id: 4, n: "Sada Pulao", c: "Pulao", p: 280, k: 150, e: "🍚", img: "assets/sada-pulao.jpg", d: "Mild, light pulao rice. Pairs well with raita." },
+  { id: 5, n: "Raita", c: "Beverages", p: 60, k: 25, e: "🥣", img: "assets/raita.jpg", d: "Fresh yoghurt with cucumber and mint." },
+  { id: 6, n: "Fizz", c: "Beverages", p: 80, k: 55, e: "🥤", img: "assets/fizz.jpg", d: "Chilled fizzy drink, 345 ml." },
+  { id: 7, n: "Cola", c: "Beverages", p: 80, k: 55, e: "🥤", img: "assets/cola.jpg", d: "Chilled cola, 345 ml." }
 ];
 let db = { seq: 0, orders: [], expenses: [] };
 try { db = JSON.parse(fs.readFileSync(DBF, "utf8")); } catch (e) { fs.mkdirSync(path.dirname(DBF), { recursive: true }); }
