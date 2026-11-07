@@ -1,6 +1,6 @@
 // Data Biryani server. No npm install needed. Run: node server.js
 const http = require("http"), fs = require("fs"), path = require("path");
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
 const PASS = process.env.ADMIN_PASS || "admin123"; // CHANGE THIS before going live
 const PUB = path.join(__dirname, "public"), DBF = path.join(__dirname, "data", "db.json");
 const FEE = 150, FREE = 1500, MIN = 500;
