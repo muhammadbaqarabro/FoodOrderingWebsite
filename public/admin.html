@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Data Biryani – Admin</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="login" id="login">
+  <h1 style="color:var(--ink);font-size:2rem">Admin login</h1>
+  <label for="pw">Password</label>
+  <input id="pw" type="password" autocomplete="current-password">
+  <div class="err" id="lerr" role="alert"></div>
+  <button class="go" id="loginBtn">Sign in</button>
+</div>
+
+<div id="app" hidden>
+<header><div class="bar">
+  <div class="logo">Data Biryani · Admin</div>
+  <button class="ghost" id="out">Sign out</button>
+</div></header>
+<div class="wrap">
+  <div class="tabs" role="tablist">
+    <button class="tab" role="tab" data-t="orders" aria-selected="true">Orders <span id="newCnt"></span></button>
+    <button class="tab" role="tab" data-t="onsite" aria-selected="false">On-site sale</button>
+    <button class="tab" role="tab" data-t="report" aria-selected="false">Daily report</button>
+  </div>
+
+  <section id="p-orders"></section>
+
+  <section id="p-onsite" hidden>
+    <p>Record a sale made at the counter. It is saved as delivered and added to today’s sales.</p>
+    <div class="pos" id="pos"></div>
+    <div class="box"><b id="posTot">Total: Rs 0</b>
+      <div class="err" id="posErr" role="alert"></div>
+      <button class="go" id="posGo">Record sale</button></div>
+  </section>
+
+  <section id="p-report" hidden>
+    <div class="noprint" style="display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap">
+      <input type="date" id="rd" style="width:auto"><button class="btn" id="print">Print report</button>
+    </div>
+    <div id="rep"></div>
+    <div class="box noprint"><h2>Add an expense</h2>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <input id="el" placeholder="Rider fuel, gas, staff…" style="flex:2 1 160px;width:auto">
+        <input id="ea" type="number" min="1" placeholder="Amount" style="flex:1 1 100px;width:auto">
+        <button class="btn" id="eadd">Add</button></div>
+      <div class="err" id="eerr" role="alert"></div></div>
+  </section>
+</div>
+</div>
+<div class="toast" id="toast" role="status"></div>
+<script src="admin.js"></script>
+</body>
+</html>

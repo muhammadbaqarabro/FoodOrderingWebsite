@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Data Biryani – Order online</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header><div class="bar">
+  <div class="logo">Data Biryani</div>
+  <button class="ghost" id="trackBtn">My orders</button>
+  <button class="pill" id="cartBtn">Cart (<span id="cnt">0</span>)</button>
+</div></header>
+
+<section class="hero">
+  <!-- Optional: put a Higgsfield video at public/assets/hero.mp4. If the file is missing, this tag removes itself. -->
+  <video autoplay muted loop playsinline src="assets/hero.mp4" onerror="this.remove()"></video>
+  <div class="steam" aria-hidden="true"><i></i><i></i><i></i></div>
+  <div class="bowl" aria-hidden="true">🍛</div>
+  <div class="hi">
+    <h1>Hot biryani, cash at your door.</h1>
+    <p>Slow-cooked rice, balanced spices, filling portions. Order online and pay the rider in cash.</p>
+    <div class="facts"><span id="status">Checking…</span><span>★ 4.4 (45 reviews)</span><span>Delivery · Takeout · Dine-in</span></div>
+  </div>
+</section>
+
+<main>
+  <div class="chips" id="chips"></div>
+  <div class="grid" id="menu"></div>
+  <section class="info">
+    <div class="box"><h2>Where we are</h2><p>Service Rd, Phase 2, Defence View Housing Society, Karachi.<br>Call <a href="tel:+923322930638">+92 332 2930638</a>. Opens 12 PM.</p></div>
+    <div class="box"><h2>How it works</h2><p>Add items, enter your address, pay cash to the rider. Delivery Rs 150, free above Rs 1,500. Minimum order Rs 500.</p></div>
+  </section>
+</main>
+<footer>© Data Biryani, Karachi</footer>
+
+<button class="fab" id="fab"><span id="fabN"></span><span id="fabT"></span></button>
+<div class="shade" id="shade"></div>
+<div class="toast" id="toast" role="status"></div>
+
+<aside id="cart" aria-label="Your cart">
+  <div class="ah"><h2>Your cart</h2><button class="x" data-close aria-label="Close">×</button></div>
+  <div class="ab" id="lines"></div>
+  <div class="sum" id="sum"></div>
+</aside>
+
+<aside id="chk" aria-label="Checkout">
+  <div class="ah"><h2>Checkout</h2><button class="x" data-close aria-label="Close">×</button></div>
+  <div class="ab"><form id="form" novalidate>
+    <label for="nm">Full name</label><input id="nm" autocomplete="name">
+    <label for="ph">Mobile number (03XX XXXXXXX)</label><input id="ph" inputmode="tel" autocomplete="tel">
+    <label for="ad">Delivery address</label><textarea id="ad" rows="3" autocomplete="street-address"></textarea>
+    <label for="nt">Note for the kitchen (optional)</label><input id="nt" placeholder="Less spicy, extra raita…">
+    <div class="cod">Payment: cash on delivery. Keep exact change ready.</div>
+    <div id="chkSum" style="margin-top:12px"></div>
+    <div class="err" id="err" role="alert"></div>
+    <button class="go" id="place" type="submit">Place order</button>
+  </form></div>
+</aside>
+
+<aside id="trk" aria-label="My orders">
+  <div class="ah"><h2>My orders</h2><button class="x" data-close aria-label="Close">×</button></div>
+  <div class="ab" id="trkBody"></div>
+</aside>
+
+<script src="app.js"></script>
+</body>
+</html>
